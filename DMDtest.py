@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -38,10 +39,30 @@ X2 = Data[:, 1:]
 U, Sig, V = np.linalg.svd(X1, full_matrices=False)
 
 r = 2
-Ur = U[:, :r]
-Sigr = np.diag(Sig)[:r, :r]
-Vr = V.conj().T[:, :r]
+U_r = U[:, :r]
+Sig_r = np.diag(Sig)[:r, :r]
+V_r = V.conj().T[:, :r]
 
 # build A tilde
-Atilde = np.dot(np.dot(np.dot(Ur.conj().T, X2), Vr), np.linalg.inv(Sigr))
-mu,W = np.linalg.eig(Atilde)
+Atilde = np.dot(np.dot(np.dot(U_r.conj().T, X2), V_r), np.linalg.inv(Sig_r))
+D, W = np.linalg.eig(Atilde)
+
+# build DMD modes
+Phi = np.dot(np.dot(np.dot(X2, V_r), np.linalg.inv(Sig_r)), W)
+
+# DMD Spectra
+
+# Lambda = np.diag(mu)
+# Omega = np.log(Lambda)/dt
+
+# Compute DMD solution
+
+b = np.dot(np.linalg.pinv(Phi), Data[:, 0])
+Psi = np.zeros([r, len(t)], dtype='complex')
+for i,_t in enumerate(t):
+    Psi[:,i] = np.multiply(np.power(D, _t / dt), b)
+
+# compute DMD reconstruction
+X_DMD = np.dot(Phi, Psi)
+
+np.allclose(Data, X_DMD, rtol=1.e-2, atol=1.e-2, equal_nan=True) # Returns True if two arrays are element-wise equal within a tolerance.
