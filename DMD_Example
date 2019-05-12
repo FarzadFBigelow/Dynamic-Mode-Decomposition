@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+x = np.linspace(-10, 10, 100)
+t = np.linspace(0, 4*pi, 50)
+dt = t[2] - t[1]
+Xgrid,T = np.meshgrid(x, t)
+
+
+# Create two spatio-temporal patterns
+f1 = multiply(20-0.2*power(Xm, 2), exp((2.3j)*Tm))
+f2 = multiply(Xm, exp(0.6j*Tm))
+# f3 = multiply(5*multiply(1/cosh(Xm/2), tanh(Xm/2)), 2*exp((0.1+2.8j)*Tm))
+
+# combine signals and make data matrix
+Data = (f1 + f2).T
+
+# create DMD input-output matrices
+X1 = Data[:,:-1]
+X2 = Data[:,1:]
