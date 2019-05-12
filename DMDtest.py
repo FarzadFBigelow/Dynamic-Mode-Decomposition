@@ -30,6 +30,18 @@ plt.show()
 
 """ Performing DMD on data """
 
-# create DMD input-output matrices
-X1 = Data[:,:-1]
-X2 = Data[:,1:]
+# create DMD input-output matrices from multidimensional subarrays
+X1 = Data[:, :-1]
+X2 = Data[:, 1:]
+
+# Singular value decomposition and rank-2 truncation
+U, Sig, V = np.linalg.svd(X1, full_matrices=False)
+
+r = 2
+Ur = U[:, :r]
+Sigr = np.diag(Sig)[:r, :r]
+Vr = V.conj().T[:, :r]
+
+# build A tilde
+Atilde = np.dot(np.dot(np.dot(Ur.conj().T, X2), Vr), np.linalg.inv(Sigr))
+mu,W = np.linalg.eig(Atilde)
