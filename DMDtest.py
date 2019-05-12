@@ -7,10 +7,10 @@ from matplotlib import cm
 
 
 # Define time and space discretizations
-x = np.linspace(-10, 10, 100)
-t = np.linspace(0, 4*np.pi, 50)
-dt = t[2] - t[1]
-Xgrid,T = np.meshgrid(x, t)
+x = np.linspace(-10, 10, 400)
+tSpan = np.linspace(0, 4 * np.pi, 200)
+dt = tSpan[2] - tSpan[1]
+Xgrid,T = np.meshgrid(x, tSpan)
 
 # Create two spatio-temporal patterns
 f1 = np.multiply(1/np.cosh(Xgrid + 3), np.exp((2.3j)*T))
@@ -22,11 +22,9 @@ Data = (f1 + f2).T
 
 ## Visualize f1, f2, f
 fig = plt.figure()
-ax = fig.gca(projection='3d')
-ax.view_init(30, 70)
-# Plot the surface.
-# surf = ax.plot_surface(Xgrid,T,linewidth=0, antialiased=False)
-surf = ax.plot_surface(Xgrid, T, np.real(f2), Linewidth =1, rstride=1, cstride=1, cmap='viridis', edgecolor='none', antialiased=True)
+axes = fig.gca(projection='3d')
+axes.view_init(30, 70)
+surf = axes.plot_surface(Xgrid, T, np.real(f2), rstride=1, cstride=1, cmap='viridis', edgecolor='none', antialiased=True)
 plt.show()
 
 """ Performing DMD on data """
@@ -52,17 +50,26 @@ Phi = np.dot(np.dot(np.dot(X2, V_r), np.linalg.inv(Sig_r)), W)
 
 # DMD Spectra
 
-# Lambda = np.diag(mu)
+# Lambda = np.diag(D)
 # Omega = np.log(Lambda)/dt
 
 # Compute DMD solution
-
 b = np.dot(np.linalg.pinv(Phi), Data[:, 0])
-Psi = np.zeros([r, len(t)], dtype='complex')
-for i,_t in enumerate(t):
+Psi = np.zeros([r, len(tSpan)], dtype='complex')
+for i,_t in enumerate(tSpan):
     Psi[:,i] = np.multiply(np.power(D, _t / dt), b)
 
 # compute DMD reconstruction
 X_DMD = np.dot(Phi, Psi)
 
-np.allclose(Data, X_DMD, rtol=1.e-2, atol=1.e-2, equal_nan=True) # Returns True if two arrays are element-wise equal within a tolerance.
+np.allclose(Data, X_DMD, rtol=1.e-1, atol=1.e-1, equal_nan=True) # Returns True if two arrays are element-wise equal within a tolerance.
+plt.figure()
+plt.plot(Phi)
+plt.show()
+# fig = plt.figure()
+# ax = fig.gca(projection='3d')
+# ax.view_init(30, 70)
+# # Plot the surface.
+# # surf = ax.plot_surface(Xgrid,T,linewidth=0, antialiased=False)
+# surf = ax.plot_surface(Xgrid, T, np.real(f2), Linewidth =1, rstride=1, cstride=1, cmap='viridis', edgecolor='none', antialiased=True)
+# plt.show()
