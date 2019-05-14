@@ -1,9 +1,7 @@
 import numpy as np
-import math
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
 
 
 # Define time and space discretizations
@@ -56,7 +54,7 @@ Phi = np.dot(np.dot(np.dot(X2, V_r), np.linalg.inv(Sig_r)), W)
 # Compute DMD solution
 b = np.dot(np.linalg.pinv(Phi), Data[:, 0])
 Psi = np.zeros([r, len(tSpan)], dtype='complex')
-for i,_t in enumerate(tSpan):
+for i, _t in enumerate(tSpan):
     Psi[:,i] = np.multiply(np.power(D, _t / dt), b)
 
 # compute DMD reconstruction
@@ -69,7 +67,6 @@ plt.show()
 # fig = plt.figure()
 # ax = fig.gca(projection='3d')
 # ax.view_init(30, 70)
-# # Plot the surface.
 # # surf = ax.plot_surface(Xgrid,T,linewidth=0, antialiased=False)
 # surf = ax.plot_surface(Xgrid, T, np.real(f2), Linewidth =1, rstride=1, cstride=1, cmap='viridis', edgecolor='none', antialiased=True)
 # plt.show()

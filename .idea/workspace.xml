@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff4c1cb0-4008-4ca7-b27e-e6d9321d30c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Dynamic-Mode-Decomposition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Dynamic-Mode-Decomposition.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DMDtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMDtest.py" afterDir="false" />
     </list>
@@ -32,11 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DMDtest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-617">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -235,7 +230,7 @@
       <workItem from="1557678841244" duration="81000" />
       <workItem from="1557679048970" duration="2427000" />
       <workItem from="1557681520256" duration="345000" />
-      <workItem from="1557681892493" duration="10741000" />
+      <workItem from="1557681892493" duration="10932000" />
     </task>
     <task id="LOCAL-00001" summary="new packages are installed.&#10;spatio-temporal patterns are created and analyzed.">
       <created>1557676233754</created>
@@ -265,22 +260,28 @@
       <option name="project" value="LOCAL" />
       <updated>1557689173417</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DMD Modes are extracted!">
+      <created>1557696055021</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1557696055021</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19472000" />
+    <option name="totallyTimeSpent" value="19663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.15597016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.218035" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.218035" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988355" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,7 +356,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new packages are installed.&#10;spatio-temporal patterns are created and analyzed." />
     <MESSAGE value="DMD perform is added" />
-    <option name="LAST_COMMIT_MESSAGE" value="DMD perform is added" />
+    <MESSAGE value="DMD Modes are extracted!" />
+    <option name="LAST_COMMIT_MESSAGE" value="DMD Modes are extracted!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Dynamic_Mode_Decomposition$DMDtest.coverage" NAME="DMDtest Coverage Results" MODIFIED="1557695986896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -397,11 +399,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DMDtest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-617">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
