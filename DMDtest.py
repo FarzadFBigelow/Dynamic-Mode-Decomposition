@@ -13,7 +13,6 @@ Xgrid,T = np.meshgrid(x, tSpan)
 # Create two spatio-temporal patterns
 f1 = np.multiply(1/np.cosh(Xgrid + 3), np.exp((2.3j)*T))
 f2 = np.multiply(1/np.cosh(Xgrid), np.tanh(Xgrid), 2*np.exp(2.8j*T))
-# f3 = multiply(5*multiply(1/cosh(Xm/2), tanh(Xm/2)), 2*exp((0.1+2.8j)*Tm))
 
 ## Combine signals and make data matrix
 Data = (f1 + f2).T
@@ -60,7 +59,6 @@ for i, _t in enumerate(tSpan):
 # compute DMD reconstruction
 X_DMD = np.dot(Phi, Psi)
 
-np.allclose(Data, X_DMD, rtol=1.e-1, atol=1.e-1, equal_nan=True) # Returns True if two arrays are element-wise equal within a tolerance.
 plt.figure()
 plt.plot(Phi)
 plt.show()
