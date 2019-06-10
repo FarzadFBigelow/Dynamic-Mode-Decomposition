@@ -52,4 +52,4 @@ Transient phenomena: characterization of transient time phenomena
 
 ## Acknowledgments
 
-* Certainly, I must thank researchers, Steven L. Brunton, Nathan Kutz, Clancy Rowley for providing such precious resources and appreciate the dedicated time, effort and the patience they have considered for such precious research and making them widely available for everyone grow as an independent researcher.
+* Certainly, I must thank researchers, Steven L. Brunton, Nathan Kutz, Clancy Rowley for providing such precious resources and appreciate the dedicated time, effort and the patience they have considered for such precious research and making them widely available for everyone to grow as an independent researcher.
