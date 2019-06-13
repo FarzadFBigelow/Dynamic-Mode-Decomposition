@@ -31,7 +31,7 @@ An example of getting some data out of the system or using it for a little demo 
 
 ### Break down into end to end tests
 
-Explaination of different typse of tests on DMD / DMDc/ EDMD / ... and their limitations will be here soon!
+Explaination of different typse of tests on DMD / mrDMD /DMDc/ EDMD / ... and their limitations will be here soon!
 
 ```
 Invariance: in translation and/or rotational invariance of low-rank objects embedded in data.
